@@ -1,0 +1,13 @@
+{
+    "name": "koge",
+    "version": "0.0.0",
+    "license": "MIT",
+    "bin": {
+        "koge": "./bin/koge"
+    },
+    "scripts": {
+        "test": "jest",
+        "build": "rollup -c ./rollup.config.js",
+        "lint": "eslint **/*.ts"
+    }
+}

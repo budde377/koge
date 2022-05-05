@@ -27,3 +27,7 @@ async function  *filesImpl(pattern: string): AsyncGenerator<File> {
 }
 
 export const files = (pattern: string): EnhancedAsyncGenerator<File> => enhancedAsyncGenerator(filesImpl(pattern))
+
+export async function writeFile(path: string, data: string): Promise<void> {
+    await fs.writeFile(path, data)
+}
