@@ -1,5 +1,20 @@
 {
     "name": "@koge/koge",
     "version": "0.0.1",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "case": "^1.6.3",
+        "glob": "^8.0.1"
+    },
+    "devDependencies": {
+        "@types/glob": "7.2.0"
+    },
+    "scripts": {
+        "test": "jest",
+        "build": "rollup -c ./rollup.config.js",
+        "lint": "eslint **/*.ts"
+    },
+    "main": "dist/koge.js",
+    "module": "dist/koge.mjs",
+    "typings": "dist/koge.d.ts"
 }

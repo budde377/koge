@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`k it runs 1`] = `
+"
+        hello world
+        true
+        1
+        1.2
+        1
+        "
+`;
+
+exports[`k supports array 1`] = `
+"
+            1234 foobar true123 false
+        "
+`;
+
+exports[`k supports nested templates 1`] = `
+"
+            const a = 123;
+            
+            const v = 1234;
+        
+        "
+`;
