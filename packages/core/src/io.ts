@@ -2,19 +2,19 @@ import glob from 'glob'
 import { EnhancedAsyncGenerator, enhancedAsyncGenerator } from './generator'
 import fs from 'fs/promises'
 
-export interface File {
+export class KFile {
     data: Buffer
-
-}
-
-async function  loadFile(path: string): Promise<File> {
-    const data = await fs.readFile(path)
-    return {
-        data
+    constructor(data: Buffer) {
+        this.data = data
     }
 }
 
-async function  *filesImpl(pattern: string): AsyncGenerator<File> {
+async function  loadFile(path: string): Promise<KFile> {
+    const data = await fs.readFile(path)
+    return new KFile(data)
+}
+
+async function  *filesImpl(pattern: string): AsyncGenerator<KFile> {
     const paths = await new Promise<string[]>((resolve, reject) => {
         glob(pattern, (err, result) => {
             if (err) return reject(err)
@@ -26,7 +26,7 @@ async function  *filesImpl(pattern: string): AsyncGenerator<File> {
     }
 }
 
-export const files = (pattern: string): EnhancedAsyncGenerator<File> => enhancedAsyncGenerator(filesImpl(pattern))
+export const files = (pattern: string): EnhancedAsyncGenerator<KFile> => enhancedAsyncGenerator(filesImpl(pattern))
 
 export async function writeFile(path: string, data: string): Promise<void> {
     await fs.writeFile(path, data)

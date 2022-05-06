@@ -1,6 +1,7 @@
-import { BaseTemplateOptions, ConvertArg, out as outKoge, Output, Template, TemplateGenerator } from "@koge/core";
+import { Analysis, AnalysisAttributeBuilder, analysisBuilder, AnalysisContextBuilder, BaseTemplateOptions, ConvertArg, KFile, out as outKoge, Output, Template, TemplateGenerator } from "@koge/core";
 import parser from '@babel/parser'
 import generator from '@babel/generator'
+import {Node, VISITOR_KEYS} from '@babel/types'
 
 export function out(p: string, template: Template<TemplateCommand>): Output {
     const output = '// Auto-generated file. Do not modify!\n' + [...template.generate({})].join('')
@@ -41,5 +42,35 @@ export function ts(template: TemplateStringsArray, ...args: TemplateArgument[]):
         template,
         args,
         convertArgument
+    )
+}
+
+function findChildren(n: Node): Node[] {
+    const children = []
+    for(const key of VISITOR_KEYS[n.type]) {
+        // @ts-expect-error Key access on node is kosher
+        const entry = n[key] as Array<Node> | null | Node
+        if (Array.isArray(entry)) {
+            children.push(...entry)
+        } else if (entry) {
+            children.push(entry)
+        }
+    }
+    return children
+}
+
+function parse(file: KFile): Node {
+    return parser.parse(file.data.toString('utf-8'))
+}
+
+export function analysis<TContext extends Record<string, unknown>, TAttributes>(
+    contextBuilder: AnalysisContextBuilder<Node, TContext, TAttributes>,
+    attributesBuilder: AnalysisAttributeBuilder<Node, TContext, TAttributes>
+): Analysis<TContext, TAttributes> {
+    return analysisBuilder<Node, TContext, TAttributes>(
+        findChildren,
+        parse,
+        contextBuilder, 
+        attributesBuilder,
     )
 }
