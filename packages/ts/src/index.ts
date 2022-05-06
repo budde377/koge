@@ -3,6 +3,8 @@ import parser from '@babel/parser'
 import generator from '@babel/generator'
 import {Node, VISITOR_KEYS} from '@babel/types'
 
+export {formatting} from '@koge/core'
+
 export function out(p: string, template: Template<TemplateCommand>): Output {
     const output = '// Auto-generated file. Do not modify!\n' + [...template.generate({})].join('')
     return outKoge(p, generator(parser.parse(output, {sourceType: 'unambiguous', plugins: ['typescript']}), {}).code)
@@ -73,4 +75,12 @@ export function analysis<TContext extends Record<string, unknown>, TAttributes>(
         contextBuilder, 
         attributesBuilder,
     )
+}
+
+export function manualSection(id: string): Template<TemplateCommand> {
+    return ts`
+    // BEGIN MANUAL SECTION (${id})
+    
+    // END MANUAL SECTION (${id})
+    `
 }
