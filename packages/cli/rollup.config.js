@@ -1,5 +1,7 @@
 import esbuild from 'rollup-plugin-esbuild'
 import pkg from './package.json'
+import executable from "rollup-plugin-executable"
+import shebang from 'rollup-plugin-preserve-shebang';
 
 const name = pkg.bin.koge.replace(/\.js$/, '')
 
@@ -11,7 +13,11 @@ const bundle = config => ({
 
 export default [
   bundle({
-    plugins: [esbuild()],
+    plugins: [
+      esbuild(), 
+      executable(),
+      shebang()
+    ],
     output: [
       {
         file: `${name}.js`,

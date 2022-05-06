@@ -1,21 +1,21 @@
 {
-    "name": "@koge/babel",
+    "name": "@koge/ts",
     "version": "0.0.1",
     "license": "MIT",
     "scripts": {
         "test": "jest",
         "build": "rollup -c ./rollup.config.js",
-        "lint": "eslint **/*.ts"
+        "lint": "eslint **/*.ts",
+        "watch": "nodemon  --watch src -e ts --exec npm run build"
     },
     "peerDependencies": {
-        "@koge/koge": "^0.0.1",
+        "@babel/generator": "^7.0.0",
         "@babel/parser": "^7.0.0",
-        "@babel/generator": "^7.0.0"
+        "@koge/core": "^0.0.1"
     },
     "devDependencies": {
-        "@koge/koge": "^0.0.1"
+        "@koge/core": "^0.0.1"
     },
-    "dependencies": {},
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "typings": "dist/index.d.ts"

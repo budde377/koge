@@ -1,5 +1,5 @@
 {
-    "name": "@koge/koge",
+    "name": "@koge/core",
     "version": "0.0.1",
     "license": "MIT",
     "dependencies": {
@@ -7,12 +7,15 @@
         "glob": "^8.0.1"
     },
     "devDependencies": {
-        "@types/glob": "7.2.0"
+        "@types/glob": "7.2.0",
+        "koge": "^0.0.0",
+        "@koge/babel": "^0.0.1"
     },
     "scripts": {
         "test": "jest",
         "build": "rollup -c ./rollup.config.js",
-        "lint": "eslint **/*.ts"
+        "lint": "eslint **/*.ts",
+        "watch": "nodemon  --watch src -e ts --exec npm run build"
     },
     "main": "dist/index.js",
     "module": "dist/index.mjs",
