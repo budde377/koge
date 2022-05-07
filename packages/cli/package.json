@@ -1,0 +1,21 @@
+{
+    "name": "koge",
+    "version": "0.0.0",
+    "license": "MIT",
+    "bin": {
+        "koge": "bin/koge.js"
+    },
+    "dependencies": {
+        "commander": "^9.2.0"
+    },
+    "scripts": {
+        "test": "jest",
+        "build": "rollup -c ./rollup.config.js",
+        "lint": "eslint **/*.ts"
+    },
+    "devDependencies": {
+        "rollup-plugin-executable": "^1.6.3",
+        "rollup-plugin-preserve-shebang": "^1.0.1",
+        "@koge/core": "^0.0.1"
+    }
+}
