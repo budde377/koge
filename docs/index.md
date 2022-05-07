@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Koge, a code generator
 
 You can use the [editor on GitHub](https://github.com/budde377/koge/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
