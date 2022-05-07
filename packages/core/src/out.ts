@@ -1,18 +1,13 @@
 import fs from 'fs/promises'
 import path from 'path'
 
-export class Output {
-    data: string
+export abstract class Output {
     path: string
+    abstract data(): Promise<string>
 
-    constructor(data: string, path: string) {
-        this.data = data
+    constructor(path: string) {
         this.path = path
     }
-}
-
-export function out(path: string, data: string): Output {
-    return new Output(data, path)
 }
 
 export async function writeOutput(out: unknown): Promise<void> {
@@ -33,6 +28,7 @@ export async function writeOutput(out: unknown): Promise<void> {
     }
     if (out instanceof Output) {
         await fs.mkdir(path.dirname(out.path), {recursive: true})
-        await fs.writeFile(out.path, out.data)
-        }
+        const data = await out.data()
+        await fs.writeFile(out.path, data)
+    }
 }

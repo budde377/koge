@@ -9,9 +9,13 @@ export class KFile {
     }
 }
 
-async function  loadFile(path: string): Promise<KFile> {
-    const data = await fs.readFile(path)
-    return new KFile(data)
+export async function  loadFile(path: string): Promise<KFile | null> {
+    try {
+        const data = await fs.readFile(path)
+        return new KFile(data)    
+    } catch(err) {
+        return null
+    }
 }
 
 async function  *filesImpl(pattern: string): AsyncGenerator<KFile> {
@@ -22,7 +26,10 @@ async function  *filesImpl(pattern: string): AsyncGenerator<KFile> {
         })
     })
     for (const path of paths) {
-        yield await loadFile(path)
+        const f = await loadFile(path)
+        if (f) {
+            yield f         
+        }
     }
 }
 
