@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`analysis will pass context 1`] = `
+"foobar
+"
+`;
+
+exports[`analysis will print complex 1`] = `
+"  Hello
+    World
+      how
+      is
+    life!
+"
+`;
