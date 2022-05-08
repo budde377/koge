@@ -1,4 +1,5 @@
-# koge
+
+![Koge](docs/assets/logo.svg)
 
 Stop writing boilerplate code let Koge do it for you!
 
