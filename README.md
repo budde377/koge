@@ -3,6 +3,8 @@
 
 Stop writing boilerplate code let Koge do it for you!
 
+Join our [discord server](https://discord.com/channels/972809947421237258/972809948113293315)
+
 ## Installing
 
 ```
@@ -40,6 +42,7 @@ This project is very much in its infancy. Here's an overview of what we need:
 
 - [x] Reserve npm packages and organisation.
 - [x] Setup intermediate website (domain, hosting, etc.)
+- [x] Setup discord
 - [ ] Support basic set of languages 
 - [ ] Implement proper logging (verbose, etc.) 
 - [ ] Implement config system (e.g. a file containing koge configuration)
