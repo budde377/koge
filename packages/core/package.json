@@ -13,7 +13,7 @@
     },
     "scripts": {
         "test": "jest",
-        "build": "rollup -c ./rollup.config.js && koge",
+        "build": "npx koge && rollup -c ./rollup.config.js",
         "lint": "eslint **/*.ts",
         "watch": "nodemon  --watch src -e ts --exec npm run build"
     },

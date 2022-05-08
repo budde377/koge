@@ -11,6 +11,7 @@
     "peerDependencies": {
         "@babel/generator": "^7.0.0",
         "@babel/parser": "^7.0.0",
+        "@babel/types": "^7.0.0",
         "@koge/core": "^0.0.1"
     },
     "devDependencies": {

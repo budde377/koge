@@ -1,9 +1,9 @@
 {
     "name": "koge",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "license": "MIT",
     "bin": {
-        "koge": "bin/koge.js"
+        "koge": "dist/bin/koge.js"
     },
     "dependencies": {
         "commander": "^9.2.0"
