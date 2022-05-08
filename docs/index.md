@@ -31,7 +31,7 @@ setup babel accordingly: [babeljs.io/docs/en/babel-preset-typescript](https://ba
 
 ```typescript
 // hello.k.js
-import {ts} from '@koge/ts'
+import {ts, out} from '@koge/ts'
 
 export default out(
     './hello.ts',
