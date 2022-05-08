@@ -1,7 +1,6 @@
 import { ts, out, formatting } from '@koge/ts'
-import path from 'path'
 
-export default out(path.join(__dirname, "__generated__", "case.ts"), ts`
+export default out('./__generated__/case.ts', ts`
 import Case from 'case';
 ${
   ['pascal', 'camel', 'kebab', 'snake'].map((f) => ts`

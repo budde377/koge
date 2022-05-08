@@ -10,7 +10,7 @@ export async function run() {
   for (const file of files) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const imported = require(path.resolve(file)).default
-    writeOutput(imported)
+    writeOutput(imported, {generatorPath: file})
   }
 
 }
