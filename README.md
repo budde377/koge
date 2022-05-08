@@ -46,6 +46,7 @@ This project is very much in its infancy. Here's an overview of what we need:
 - [ ] Support basic set of languages 
 - [ ] Implement proper logging (verbose, etc.) 
 - [ ] Implement config system (e.g. a file containing koge configuration)
+- [ ] Documentation, documentation, documentation!
 
 
 Languages that we want to support
