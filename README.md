@@ -32,3 +32,27 @@ run koge
 ```sh
 $ npm exec koge
 ```
+
+
+## TODO
+
+This project is very much in its infancy. Here's an overview of what we need:
+
+- [x] Reserve npm packages and organisation.
+- [x] Setup intermediate website (domain, hosting, etc.)
+- [ ] Support basic set of languages 
+- [ ] Implement proper logging (verbose, etc.) 
+- [ ] Implement config system (e.g. a file containing koge configuration)
+
+
+Languages that we want to support
+
+- [x] TypeScript
+- [ ] JavaScript
+- [ ] JavaScript JSX
+- [ ] TypeScript JSX
+- [ ] JSON
+- [ ] Plaintext
+- [ ] GraphQL
+
+
