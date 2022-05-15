@@ -35,7 +35,6 @@ run koge
 $ npm exec koge
 ```
 
-
 ## TODO
 
 This project is very much in its infancy. Here's an overview of what we need:
@@ -58,5 +57,3 @@ Languages that we want to support
 - [ ] JSON
 - [ ] Plaintext
 - [ ] GraphQL
-
-

@@ -21,7 +21,7 @@
         "nodemon": "^2.0.16"
     },
     "scripts": {
-        "build": "npm run build -w packages/core && npm run build -w packages/ts && npm run build -w packages/cli"
+        "build": "npm run build -w packages/core && npm run build -w packages/cli -w packages/json -w packages/ts"
     },
     "packageManager": "yarn@3.2.0"
 }

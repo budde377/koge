@@ -1,0 +1,19 @@
+{
+    "name": "@koge/json",
+    "version": "0.0.1",
+    "scripts": {
+        "test": "jest",
+        "build": "npx koge && rollup -c ./rollup.config.js",
+        "lint": "eslint **/*.ts",
+        "watch": "nodemon  --watch src -e ts --exec npm run build"
+    },
+    "peerDependencies": {
+        "@koge/core": "^0.0.1"
+    },
+    "devDependencies": {
+        "@koge/core": "^0.0.1"
+    },
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "typings": "dist/index.d.ts"
+}

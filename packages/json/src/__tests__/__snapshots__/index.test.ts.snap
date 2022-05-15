@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`json Will generate object 1`] = `
+"{
+  \\"foo\\": 1,
+  \\"bar\\": false
+}"
+`;
